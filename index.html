@@ -9,116 +9,96 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  
+  <script defer src="script.js"></script>
+  <titel>Check-The-Errs</titel>
+
 </head>
-
 <body>
-
-  <div id="board">
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-		<div class="light square"></div>
-		<div class="dark square"></div>
-
-		<div class="black checker" id="black-checker-1"></div>
-		<div class="black checker" id="black-checker-2"></div>
-		<div class="black checker" id="black-checker-3"></div>
-		<div class="black checker" id="black-checker-4"></div>
-		<div class="black checker" id="black-checker-5"></div>
-		<div class="black checker" id="black-checker-6"></div>
-		<div class="black checker" id="black-checker-7"></div>
-		<div class="black checker" id="black-checker-8"></div>
-		<div class="black checker" id="black-checker-9"></div>
-		<div class="black checker" id="black-checker-10"></div>
-		<div class="black checker" id="black-checker-11"></div>
-		<div class="black checker" id="black-checker-12"></div>
-		<div class="red checker" id="red-checker-1"></div>
-		<div class="red checker" id="red-checker-2"></div>
-		<div class="red checker" id="red-checker-3"></div>
-		<div class="red checker" id="red-checker-4"></div>
-		<div class="red checker" id="red-checker-5"></div>
-		<div class="red checker" id="red-checker-6"></div>
-		<div class="red checker" id="red-checker-7"></div>
-		<div class="red checker" id="red-checker-8"></div>
-		<div class="red checker" id="red-checker-9"></div>
-		<div class="red checker" id="red-checker-10"></div>
-		<div class="red checker" id="red-checker-11"></div>
-		<div class="red checker" id="red-checker-12"></div>
-
-	</div>
-
+  <main>
+    <table>
+      <tr>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="0"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="1"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="2"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="3"></p></td>
+      </tr>  
+      <tr>
+        <td><p class="redChecker" id="4"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="5"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="6"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="7"></p></td>
+        <td class="noPieceHere"></td>
+      </tr>  
+      <tr>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="8"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="9"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="10"></p></td>
+        <td class="noPieceHere"></td>
+        <td><p class="redChecker" id="11"></p></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="noPieceHere"></td>
+        <td></td>
+        <td class="noPieceHere"></td>
+        <td></td>
+        <td class="noPieceHere"></td>
+        <td></td>
+        <td class="noPieceHere"></td>
+      </tr>
+      <tr>
+        <td class="noPieceHere"></td>
+        <td></td>
+        <td class="noPieceHere"></td>
+        <td></td>
+        <td class="noPieceHere"></td>
+        <td></td>
+        <td class="noPieceHere"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="blackChecker" id="12"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="13"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="14"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="15"></span></td>
+        <td class="noPieceHere"></td>
+      </tr>
+       <tr>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="16"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="17"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="18"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="19"></span></td>
+      </tr>
+      <tr>
+        <td><span class="blackChecker" id="20"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="21"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="22"></span></td>
+        <td class="noPieceHere"></td>
+        <td><span class="blackChecker" id="23"></span></td>
+        <td class="noPieceHere"></td>
+      </tr>
+    </table>
     
-  <script src="script.js"></script>
+  </main>
   <button>Start Game</button>
-
-
 </body>
-
 </html>
