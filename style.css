@@ -1,0 +1,39 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(217 213 199);
+  }
+  
+  body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #board {
+          width: 400px;
+          height: 400px;
+          background-color: rgba(245, 238, 225),0.50;
+          border: 10px solid rgba(0,0,0,0.65);
+          border-radius: 10px;
+          position: relative;
+      }
+  
+      .square {
+          width: 50px;
+          height: 50px;
+          float: left;
+      }
+      .dark { background-color: rgba(90,69,57,0.25); }
+      .light { background-color: rgba(255,255,255,0.25); }
+  
+      .checker {
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          position: absolute;
+      }
+      .red { background-color: red; }
+      .black { background-color: black; }
