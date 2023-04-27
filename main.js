@@ -1,4 +1,4 @@
-/----- constants -----/
+/*----- constants -----*/
 
 const board = [
     null, 0, null, 1, null, 2, null, 3,
@@ -9,29 +9,14 @@ const board = [
     12, null, 13, null, 14, null, 15, null,
     null, 16, null, 17, null, 18, null, 19,
     20, null, 21, null, 22, null, 23, null
-]
+];
 
-/*---------- Cached Variables ----------*/
-
-// parses pieceId's and returns the index of that piece's place on the board
-let findChecker = function (checkerId) {
-  let parsed = parseInt(checkerId);
-  return board.indexOf(parsed);
-};
-
-// DOM referenes
-const cells = document.querySelectorAll("td");
-let redChecker = document.querySelectorAll("p");
-let blackChecker = document.querySelectorAll("span")
-const redTurnText = document.querySelectorAll(".red-turn-text");
-const blackTurnText = document.querySelectorAll(".black-turn-text");
-const divider = document.querySelector("#divider")
-
+/*----- state variables -----*/
 // player properties
 let turn = true;
 let redScore = 12;
 let blackScore = 12;
-let playerCheckers;
+let playerChecker;
 
 // selected piece properties
 let selectedChecker = {
@@ -46,7 +31,24 @@ let selectedChecker = {
     minusNinthSpace: false,
     minusFourteenthSpace: false,
     minusEighteenthSpace: false
-}
+};
+
+// parses pieceId's and returns the index of that piece's place on the board
+let findChecker = function (checkerId) {
+  let parsed = parseInt(checkerId);
+  return board.indexOf(parsed);
+};
+
+/*----- cached elements -----*/
+
+// DOM referenes
+const cells = document.querySelectorAll("td");
+let redChecker = document.querySelectorAll("p");
+let blackChecker = document.querySelectorAll("span");
+const redTurnText = document.querySelectorAll(".red-turn-text");
+const blackTurnText = document.querySelectorAll(".black-turn-text");
+const divider = document.querySelector("#divider");
+
 
 /*---------- Event Listeners ----------*/
 
@@ -63,7 +65,7 @@ function giveCheckerEventListeners() {
     }
 }
 
-/*---------- Logic ----------*/
+/*----- functions -----*/
 
 // holds the length of the players piece count
 function getPlayerChecker() {
@@ -153,8 +155,8 @@ function checkAvailableJumpSpaces() {
         && board[selectedChecker.indexOfBoardChecker + 7] >= 12) {
             selectedChecker.fourteenthSpace = true;
         }
-        if (board[selectedChecker.indexOfBoardChChecker + 18] === null 
-        && cells[selectedCCheckerr.indexOfBoardChecker + 18].classList.contains("noCheckerHere") !== true
+        if (board[selectedChecker.indexOfBoardChecker + 18] === null 
+        && cells[selectedChecker.indexOfBoardChecker + 18].classList.contains("noCheckerHere") !== true
         && board[selectedChecker.indexOfBoardChecker + 9] >= 12) {
             selectedChecker.eighteenthSpace = true;
         }
@@ -164,7 +166,7 @@ function checkAvailableJumpSpaces() {
             selectedChecker.minusFourteenthSpace = true;
         }
         if (board[selectedChecker.indexOfBoardChecker - 18] === null 
-        && cells[selectedCheckerindexOfBoardChecker - 18].classList.contains("noCheckerHere") !== true
+        && cells[selectedChecker.indexOfBoardChecker - 18].classList.contains("noCheckerHere") !== true
         && board[selectedChecker.indexOfBoardChecker - 9] >= 12) {
             selectedChecker.minusEighteenthSpace = true;
         }
@@ -264,7 +266,7 @@ function makeMove(number) {
             redChecker = document.querySelectorAll("p");
         } else {
             cells[selectedChecker.indexOfBoardChecker + number].innerHTML = `<p class="red-checker" id="${selectedChecker.checkerId}"></p>`;
-            redCheckerdocument.querySelectorAll("p");
+            redChecker = document.querySelectorAll("p");
         }
     } else {
         if (selectedChecker.isKing) {

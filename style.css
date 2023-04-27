@@ -1,114 +1,179 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <script defer src="script.js"></script>
-    <title>Check-the-ers</title>
-</head>
-<body>
-    <main>
-        <div class="red-turn-text mobile">
-            Reds turn
-        </div>
-        <table>
-            <tr>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="0"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="1"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="2"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="3"></p></td>
-            </tr>
-            <tr>
-                <td><p class="red-checker" id="4"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="5"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="6"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="7"></p></td>
-                <td class="noCheckerHere"></td>
-            </tr>
-            <tr>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="8"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="9"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="10"></p></td>
-                <td class="noCheckerHere"></td>
-                <td><p class="red-checker" id="11"></p></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td class="noCheckerHere"></td>
-                <td></td>
-                <td class="noCheckerHere"></td>
-                <td></td>
-                <td class="noCheckerHere"></td>
-                <td></td>
-                <td class="noCheckerHere"></td>
-            </tr>
-            <tr>
-                <td class="noCheckerHere"></td>
-                <td></td>
-                <td class="noCheckerHere"></td>
-                <td></td>
-                <td class="noCheckerHere"></td>
-                <td></td>
-                <td class="noCheckerHere"></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class="black-checker" id="12"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="13"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="14"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="15"></span></td>
-                <td class="noCheckerHere"></td>
-            </tr>
-            <tr>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="16"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="17"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="18"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="19"></span></td>
-            </tr>
-            <tr>
-                <td><span class="black-checker" id="20"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="21"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="22"></span></td>
-                <td class="noCheckerHere"></td>
-                <td><span class="black-checker" id="23"></span></td>
-                <td class="noCheckerHere"></td>
-            </tr>
-        </table>
-        <div class="desktop">
-            <div class="red-turn-text">
-                Reds turn
-            </div>
-            <p id="divider">|</p>
-            <div class="black-turn-text">
-                Blacks turn
-            </div>
-        </div>
-        <div class="black-turn-text mobile">
-            Blacks turn
-        </div>
-    </main>
-</body>
-</html>
+* {
+    margin: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile {
+    display: none;
+}
+
+.desktop {
+    margin: 0;
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    background-color: rgb(118, 95, 80);
+    width: 65px;
+    height: 65px;
+}
+
+.noCheckerHere {
+    background-color: rgb(240, 230, 220);
+}
+
+.red-turn-text {
+    text-align: center;
+    color: black;
+    font-family: "open sans";
+    font-size: 55px;
+}
+
+.black-turn-text {
+    text-align: center;
+    font-family: "open sans";
+    font-size: 55px;
+    color: lightgray;
+}
+
+.red-checker {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: rgb(203, 44, 32);
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.black-checker {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: rgb(36, 26, 24);
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.king.red-checker {
+    background-color: rgb(227, 49, 186);
+}
+
+.king.black-checker {
+    background-color: rgb(101, 218, 87);
+}
+
+p {
+    display: inline-block;
+}
+
+#divider {
+    font-size: 90px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+span {
+    display: inline-block;
+}
+
+@media screen and (max-width: 560px) {
+    .red-checker {
+        height: 4.5vw;
+        width: 4.5vw;
+    }
+
+    .black-checker {
+        height: 4.5vw;
+        width: 4.5vw;
+    }
+
+    td {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .red-turn-text {
+        font-size: 40px;
+    }
+    
+    .black-turn-text {
+        font-size: 40px;
+    }
+
+    table {
+        margin: 0;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .red-turn-text {
+        -webkit-transform:rotate(-180deg);
+        -moz-transform:rotate(-180deg);
+        -o-transform:rotate(-180deg);
+        transform:rotate(-180deg);
+        filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);    
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .red-checker {
+        height: 3vw;
+        width: 3vw;
+    }
+
+    .black-checker {
+        height: 3vw;
+        width: 3vw;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .red-checker {
+        height: 2.5vw;
+        width: 2.5vw;
+    }
+
+    .black-checker {
+        height: 2.5vw;
+        width: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .red-checker {
+        height: 1.5vw;
+        width: 1.5vw;
+    }
+
+    .black-checker {
+        height: 1.5vw;
+        width: 1.5vw;
+    }
+
+    .red-turn-text {
+        font-size: 35px;
+    }
+    
+    .black-turn-text {
+        font-size: 35px;
+    }
+}
