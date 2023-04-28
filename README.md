@@ -32,6 +32,8 @@ click here to Check-the-errs ---> https://babel-17.github.io/Check-the-errs/
 
 -Add x2 jumps for taking more of the opponents checkers.
 
+-Add AI bot with either MinMax or Alpha-Beta Prunning.
+
 -Embed within RPG world as a mini-game.
 
 <img width="637" alt="Screenshot 2023-04-28 at 2 28 44 AM" src="https://user-images.githubusercontent.com/35887068/235111097-04118ddc-8bc0-4fec-9039-2e25101211fa.png">
