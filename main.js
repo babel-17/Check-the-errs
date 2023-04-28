@@ -369,8 +369,8 @@ function changePlayer() {
 giveCheckerEventListeners();
 
 //----- Additional Functions -----//
-function init() {
+function initGame() {
     giveCheckerEventListeners();
 }
 
-init();
+initGame();
