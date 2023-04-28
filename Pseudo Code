@@ -1,0 +1,43 @@
+Set up HTML:
+    - link to CSS and JS files.
+    - Create a main element with checkers board layout.
+    - Add red and black checkers with id attributes in a table.
+    - Add turn indicators for mobile and desktop layouts.
+    
+Set up CSS:
+    - Set global styles, main element, and divs.
+    - Style table, cells, and checker classes.
+    - Add media queries for different screen sizes.
+    
+Set up JavaScript:
+    - Initialize board:
+    - Create 8x8 matrix and populate with alternating black/white cells
+
+  Initialize pieces:
+    - Create two sets of pieces (one per player)
+    - Place pieces on the board per checkers rules
+
+   Play game:
+    - Set current player to player 1
+    - Loop while both players have pieces:
+    - Display board
+    - Get player's move
+    - Validate move
+    - If valid: make move, remove captured pieces, and check for additional capture moves
+    - If invalid: prompt for new move
+    - Check for win conditions
+    - If win: end game and declare winner
+    - Else: switch player's turn
+
+   Move validation:
+    - Ensure piece belongs to current player
+    - Ensure destination cell is empty or has opponent's piece
+    - Check for regular or jump move
+    - Verify move legality per checkers rules
+
+   Capture logic:
+    - Check for additional capture moves upon jump move
+    - Require additional captures if available, else end turn
+
+   End game logic:
+    - Implement various win, draw, and forfeit conditions
