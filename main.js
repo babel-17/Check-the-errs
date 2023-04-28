@@ -67,10 +67,7 @@ function giveCheckerEventListeners() {
 }
 
 /*----- functions -----*/
-// Stub for the render() function
-function render() {
-  // Code to update the DOM based on the current state
-}
+
 // Sets the PlayerChecker to either red or black.
 function getPlayerChecker() {
     if (turn) {
@@ -286,6 +283,7 @@ function makeMove(number) {
     } else {
         changeData(indexOfChecker, indexOfChecker + number);
     }
+  render();
 }
 
 // Changes the board states data. 
@@ -365,6 +363,14 @@ function changePlayer() {
         }
     }
     giveCheckerEventListeners();
+  render();
 }
 
 giveCheckerEventListeners();
+
+//----- Additional Functions -----//
+function init() {
+    giveCheckerEventListeners();
+}
+
+init();
