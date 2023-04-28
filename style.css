@@ -1,5 +1,6 @@
 * {
     margin: auto;
+    background-color: rgb(222, 222, 222);
 }
 
 main {
@@ -8,6 +9,7 @@ main {
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+    font-family: 'Open Sans', sans-serif;
 }
 
 div {
@@ -38,13 +40,13 @@ td {
 .red-turn-text {
     text-align: center;
     color: black;
-    font-family: "open sans";
+    font-family: 'Open Sans';
     font-size: 55px;
 }
 
 .black-turn-text {
     text-align: center;
-    font-family: "open sans";
+    font-family: 'Open Sans';
     font-size: 55px;
     color: lightgray;
 }

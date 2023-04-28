@@ -1,3 +1,4 @@
+//----- Model -----//
 /*----- constants -----*/
 
 const board = [
@@ -11,14 +12,14 @@ const board = [
     20, null, 21, null, 22, null, 23, null
 ];
 
-/*----- state variables -----*/
-// player properties
+/*----- State Variables -----*/
+// Player properties.
 let turn = true;
 let redScore = 12;
 let blackScore = 12;
 let playerChecker;
 
-// selected piece properties
+// Selected checker properties.
 let selectedChecker = {
     checkerId: -1,
     indexOfBoardChecker: -1,
@@ -33,15 +34,16 @@ let selectedChecker = {
     minusEighteenthSpace: false
 };
 
-// parses pieceId's and returns the index of that piece's place on the board
+// Parses checker Id's and returns the index of that checker on the board
 let findChecker = function (checkerId) {
   let parsed = parseInt(checkerId);
   return board.indexOf(parsed);
 };
 
-/*----- cached elements -----*/
+//----- View -----//
+/*----- Cached Elements -----*/
 
-// DOM referenes
+// For the DOM
 const cells = document.querySelectorAll("td");
 let redChecker = document.querySelectorAll("p");
 let blackChecker = document.querySelectorAll("span");
@@ -49,10 +51,9 @@ const redTurnText = document.querySelectorAll(".red-turn-text");
 const blackTurnText = document.querySelectorAll(".black-turn-text");
 const divider = document.querySelector("#divider");
 
-
+//----- Controller-----//
 /*---------- Event Listeners ----------*/
-
-// initialize event listeners on pieces
+// Initialize event listeners on checkers.
 function giveCheckerEventListeners() {
     if (turn) {
         for (let i = 0; i < redChecker.length; i++) {
@@ -66,8 +67,11 @@ function giveCheckerEventListeners() {
 }
 
 /*----- functions -----*/
-
-// holds the length of the players piece count
+// Stub for the render() function
+function render() {
+  // Code to update the DOM based on the current state
+}
+// Sets the PlayerChecker to either red or black.
 function getPlayerChecker() {
     if (turn) {
         playerChecker = redChecker;
@@ -78,14 +82,14 @@ function getPlayerChecker() {
     resetBorders();
 }
 
-// removes possible moves from old selected piece (* this is needed because the user might re-select a piece *)
+// Removes potential moves associated with the previously chosen checker.
 function removeCellonclick() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].removeAttribute("onclick");
     }
 }
 
-// resets borders to default
+// Resets borders.
 function resetBorders() {
     for (let i = 0; i < playerChecker.length; i++) {
         playerChecker[i].style.border = "1px solid white";
@@ -94,7 +98,7 @@ function resetBorders() {
     getSelectedChecker();
 }
 
-// resets selected piece properties
+// Resets selected checker properties to initial value.
 function resetSelectedCheckerProperties() {
     selectedChecker.checkerId = -1;
     selectedChecker.indexOfBoardChecker = -1;
@@ -109,14 +113,14 @@ function resetSelectedCheckerProperties() {
     selectedChecker.minusEighteenthSpace = false;
 }
 
-// gets ID and index of the board cell its on
+// Gets and sets ID and index of the cell on the board.
 function getSelectedChecker() {
     selectedChecker.checkerId = parseInt(event.target.id);
     selectedChecker.indexOfBoardChecker = findChecker(selectedChecker.checkerId);
     isCheckerKing();
 }
 
-// checks if selected piece is a king
+// Checks for a king.
 function isCheckerKing() {
     if (document.getElementById(selectedChecker.checkerId).classList.contains("king")) {
         selectedChecker.isKing = true;
@@ -126,7 +130,7 @@ function isCheckerKing() {
     getAvailableSpaces();
 }
 
-// gets the moves that the selected piece can make
+// Gets the moves that the selected checker can make.
 function getAvailableSpaces() {
     if (board[selectedChecker.indexOfBoardChecker + 7] === null && 
         cells[selectedChecker.indexOfBoardChecker + 7].classList.contains("noCheckerHere") !== true) {
@@ -147,7 +151,7 @@ function getAvailableSpaces() {
     checkAvailableJumpSpaces();
 }
 
-// gets the moves that the selected piece can jump
+// Gets the moves that the selected checker can jump.
 function checkAvailableJumpSpaces() {
     if (turn) {
         if (board[selectedChecker.indexOfBoardChecker + 14] === null 
@@ -195,7 +199,7 @@ function checkAvailableJumpSpaces() {
     checkCheckerConditions();
 }
 
-// restricts movement if the piece is a king
+// Restricts movement if the piece is a king
 function checkCheckerConditions() {
     if (selectedChecker.isKing) {
         giveCheckerBorder();
@@ -215,18 +219,18 @@ function checkCheckerConditions() {
     }
 }
 
-// gives the piece a green highlight for the user (showing its movable)
+// Gives checker a blue highlight.
 function giveCheckerBorder() {
     if (selectedChecker.seventhSpace || selectedChecker.ninthSpace || selectedChecker.fourteenthSpace || selectedChecker.eighteenthSpace
     || selectedChecker.minusSeventhSpace || selectedChecker.minusNinthSpace || selectedChecker.minusFourteenthSpace || selectedChecker.minusEighteenthSpace) {
-        document.getElementById(selectedChecker.checkerId).style.border = "3px solid green";
+        document.getElementById(selectedChecker.checkerId).style.border = "3px solid blue";
         giveCellsClick();
     } else {
         return;
     }
 }
 
-// gives the cells on the board a 'click' bassed on the possible moves
+// Gives the cells on the board a 'click' baseed on possible moves.
 function giveCellsClick() {
     if (selectedChecker.seventhSpace) {
         cells[selectedChecker.indexOfBoardChecker + 7].setAttribute("onclick", "makeMove(7)");
@@ -254,9 +258,7 @@ function giveCellsClick() {
     }
 }
 
-/* v when the cell is clicked v */
-
-// makes the move that was clicked
+// Makes the move that was clicked.
 function makeMove(number) {
     document.getElementById(selectedChecker.checkerId).remove();
     cells[selectedChecker.indexOfBoardChecker].innerHTML = "";
@@ -286,7 +288,7 @@ function makeMove(number) {
     }
 }
 
-// Changes the board states data on the back end
+// Changes the board states data. 
 function changeData(indexOfBoardChecker, modifiedIndex, removeChecker) {
     board[indexOfBoardChecker] = null;
     board[modifiedIndex] = parseInt(selectedChecker.checkerId);
@@ -312,7 +314,7 @@ function changeData(indexOfBoardChecker, modifiedIndex, removeChecker) {
     removeEventListeners();
 }
 
-// removes the 'onClick' event listeners for pieces
+// Removes the 'onClick' event listeners.
 function removeEventListeners() {
     if (turn) {
         for (let i = 0; i < redChecker.length; i++) {
@@ -324,9 +326,10 @@ function removeEventListeners() {
         }
     }
     checkForWin();
+    giveCheckerEventListeners();
 }
 
-// Checks for a win
+// Checks for a win.
 function checkForWin() {
     if (blackScore === 0) {
         divider.style.display = "none";
@@ -346,7 +349,7 @@ function checkForWin() {
     changePlayer();
 }
 
-// Switches players turn
+// Switches players turn.
 function changePlayer() {
     if (turn) {
         turn = false;
